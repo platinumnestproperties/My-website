@@ -1,128 +1,192 @@
-body {
+ {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f8f8f8;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #f9f9f9;
     color: #333;
 }
 
-header {
-    background: white;
-    padding: 10px 40px;
+/* NAVBAR */
+.navbar {
+    background: #fff;
+    padding: 15px 25px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    border-bottom: 1px solid #eee;
+}
+
+.nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-header img {
+.nav-logo img {
     height: 60px;
 }
 
-nav a {
-    margin-left: 20px;
+.nav-menu {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-menu li a {
     text-decoration: none;
     color: #333;
     font-weight: 600;
 }
 
+.nav-toggle {
+    display: none;
+    background: none;
+    font-size: 28px;
+    border: none;
+}
+
+/* HERO */
 .hero {
-    height: 80vh;
-    background: url('[images.unsplash.com](https://images.unsplash.com/photo-1502005097973-6a7082348e28?q=80&w=2600)') center/cover no-repeat;
+    height: 90vh;
+    background: url('hero.jpg') center/cover no-repeat;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.hero-content {
+    position: relative;
+    color: #fff;
     padding: 20px;
 }
 
 .hero h1 {
     font-size: 3rem;
-    margin: 0;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    font-weight: 700;
 }
 
 .hero p {
-    font-size: 1.3rem;
-    max-width: 600px;
-    text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+    margin: 15px 0;
+    font-size: 1.2rem;
 }
 
-.section {
-    padding: 60px 40px;
-    background: white;
-    margin: 40px auto;
+.btn-primary {
+    background: #c8a24e;
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.btn-outline {
+    border: 2px solid #c8a24e;
+    padding: 10px 18px;
+    text-decoration: none;
+    color: #c8a24e;
+    border-radius: 6px;
+}
+
+/* SECTIONS */
+section {
+    padding: 80px 20px;
+}
+
+.container {
     max-width: 1100px;
-    border-radius: 12px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 2rem;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 600px;
     margin: auto;
 }
 
-input, textarea {
-    padding: 15px;
+h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* INVESTMENTS */
+.investment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.inv-card {
+    background: #fff;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+}
+
+.inv-img {
+    height: 180px;
+    background: #ddd;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+/* FORMS */
+.investor-form input,
+.investor-form select,
+.investor-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
     border-radius: 6px;
     border: 1px solid #ccc;
-    font-size: 1rem;
 }
 
-button {
-    background: #c4a763;
-    border: none;
-    padding: 15px;
-    color: white;
-    font-size: 1.1rem;
+/* CONTACT */
+.whatsapp-btn {
+    display: inline-block;
+    padding: 14px 20px;
+    background: #25D366;
+    color: #fff;
     border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: #b39250;
-}
-
-.contact-links {
-    text-align: center;
-    margin-top: 15px;
-}
-
-.contact-links a {
-    color: #c4a763;
-    font-weight: 600;
     text-decoration: none;
-    margin: 10px;
+    margin: 10px 0;
+}
+
+.socials {
+    margin-top: 15px;
+    display: flex;
+    gap: 20px;
 }
 
 footer {
     text-align: center;
-    padding: 20px;
-    background: #222;
-    color: white;
-    margin-top: 40px;
+    padding: 25px;
+    background: #fff;
 }
 
-@media(max-width: 768px){
-    header {
+/* MOBILE */
+@media(max-width: 768px) {
+    .nav-menu {
+        display: none;
         flex-direction: column;
-        gap: 10px;
+        background: #fff;
+        padding: 20px;
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        border-radius: 8px;
+        box-shadow: 0 3px 20px rgba(0,0,0,0.1);
     }
-    nav a {
-        margin: 0 10px;
+
+    .nav-toggle {
+        display: block;
     }
+
     .hero h1 {
-        font-size: 2.3rem;
+        font-size: 2.2rem;
     }
 }
