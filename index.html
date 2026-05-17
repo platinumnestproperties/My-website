@@ -1,64 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Platinum Nest Properties Ltd</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
+    <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap)" rel="stylesheet">
 </head>
 <body>
-<header>
-    <img src="images/logo.png" alt="Platinum Nest Properties Logo">
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#investor">Investors</a>
-        <a href="#opportunities">Opportunities</a>
-        <a href="#contact">Contact</a>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <img src="logo.png" alt="Platinum Nest Properties Logo">
+            </a>
+            <button class="nav-toggle" id="navToggle">☰</button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#investments">Investment Opportunities</a></li>
+                <li><a href="#investor-enquiry">Investor Enquiries</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
-</header>
-<section id="home" class="hero">
-    <h1>Platinum Nest Properties Ltd</h1>
-    <p>Premium investment opportunities and luxury developments in London, in partnership with Damac.</p>
-</section>
-<section class="section">
-    <h2>Company Information</h2>
-    <p>
-        Platinum Nest Properties Ltd specialises in sourcing high‑value development deals,
-        luxury apartment sales, and penthouse acquisitions across London. Through key partnerships,
-        including Damac, we provide investors exclusive access to world‑class opportunities.
-    </p>
-</section>
-<section id="investor" class="section">
-    <h2>Investor Enquiries</h2>
-    <form id="investorForm">
-        <input type="text" placeholder="Full Name" required>
-        <input type="email" placeholder="Email Address" required>
-        <input type="text" placeholder="Investment Budget (£)" required>
-        <textarea rows="5" placeholder="Tell us what type of investment you are looking for..." required></textarea>
-        <button type="submit">Submit Investor Request</button>
-    </form>
-    <div id="investorMessage"></div>
-</section>
-<section id="opportunities" class="section">
-    <h2>Investment Opportunities</h2>
-    <p>Gain early access to luxury units, off‑plan developments, and profitable investment opportunities curated for high‑value investors.</p>
-</section>
-<section id="contact" class="section">
-    <h2>Contact Us</h2>
-    <p style="text-align:center;">Contact us directly through WhatsApp or reach out to our business partner.</p>
-    <div class="contact-links">
-        <a href="[wa.me](https://wa.me/yourwhatsappnumber)" target="_blank">WhatsApp (You)</a>
-        <a href="[wa.me](https://wa.me/partnerwhatsappnumber)" target="_blank">Business Partner</a>
-    </div>
-    <div class="contact-links social">
-        <a href="[instagram.com](https://instagram.com)" target="_blank">Instagram</a>
-        <a href="[linkedin.com](https://linkedin.com)" target="_blank">LinkedIn</a>
-        <a href="[facebook.com](https://facebook.com)" target="_blank">Facebook</a>
-    </div>
-</section>
-<footer>
-    © 2026 Platinum Nest Properties Ltd — All Rights Reserved
-</footer>
-<script src="script.js"></script>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Luxury Investments. Exceptional Returns.</h1>
+            <p>Exclusive development deals & DAMAC luxury residences in London.</p>
+            <a href="#investments" class="btn-primary">Explore Investments</a>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about">
+        <div class="container">
+            <h2>About Platinum Nest Properties Ltd</h2>
+            <p>
+                We specialise in premium real estate investment opportunities, ranging from 
+                exclusive development deals for investors to high‑end DAMAC luxury homes, 
+                penthouses, and serviced residences in London.  
+            </p>
+        </div>
+    </section>
+
+    <!-- INVESTMENT OPPORTUNITIES -->
+    <section class="investments" id="investments">
+        <div class="container">
+            <h2>Investment Opportunities</h2>
+
+            <div class="investment-grid">
+
+                <div class="inv-card">
+                    <div class="inv-img placeholder">DAMAC Tower</div>
+                    <h3>DAMAC Tower Nine Elms</h3>
+                    <p>Luxury apartments designed by Versace Home in the heart of London.</p>
+                    <a href="#contact" class="btn-outline">Request Details</a>
+                </div>
+
+                <div class="inv-card">
+                    <div class="inv-img placeholder">Development Deal</div>
+                    <h3>Prime London Development Deal</h3>
+                    <p>High‑yield JV opportunities with projected returns of 15–25%.</p>
+                    <a href="#contact" class="btn-outline">Request Details</a>
+                </div>
+
+                <div class="inv-card">
+                    <div class="inv-img placeholder">Luxury Penthouse</div>
+                    <h3>Luxury Penthouses</h3>
+                    <p>Premium penthouses available exclusively through Platinum Nest.</p>
+                    <a href="#contact" class="btn-outline">Request Details</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INVESTOR ENQUIRIES -->
+    <section class="investor" id="investor-enquiry">
+        <div class="container">
+            <h2>Investor Enquiries</h2>
+            <p>Tell us what you’re looking for and we’ll get in touch within 24 hours.</p>
+
+            <form class="investor-form" id="investorForm">
+                <input type="text" name="name" placeholder="Full Name *" required>
+                <input type="email" name="email" placeholder="Email Address *" required>
+                <input type="tel" name="phone" placeholder="Phone Number *" required>
+
+                <select name="investmentRange">
+                    <option value="">Investment Range</option>
+                    <option value="100k-250k">£100k–£250k</option>
+                    <option value="250k-500k">£250k–£500k</option>
+                    <option value="500k-1m">£500k–£1m</option>
+                    <option value="1m+">£1m+</option>
+                </select>
+
+                <textarea name="message" rows="5" placeholder="Tell us what you're looking for..."></textarea>
+
+                <button class="btn-primary" type="submit">Submit Enquiry</button>
+            </form>
+
+            <div id="formMessage"></div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+
+            <a href="[wa.me](https://wa.me/447000000000)" target="_blank" class="whatsapp-btn">
+                WhatsApp Us
+            </a>
+
+            <p>Email: info@platinumnest.co.uk</p>
+
+            <div class="socials">
+                <a href="#" target="_blank">Instagram</a>
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">Facebook</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Platinum Nest Properties Ltd</p>
+    </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>
