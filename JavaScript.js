@@ -11,3 +11,8 @@ navToggle.addEventListener("click", () => {
 document.getElementById("investorForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
+    document.getElementById("formMessage").innerHTML =
+        "<p style='color:green; margin-top:10px;'>Thank you! Your enquiry has been submitted.</p>";
+
+    this.reset();
+});
